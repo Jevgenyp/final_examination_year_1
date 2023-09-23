@@ -1,0 +1,38 @@
+История команд на Node-02 lab: Те же команды выполнял на других узлах! 
+Но именно в Node-02 (Lab) были сложности с портами!
+
+# 1.Создание docker-compose файла:
+nano docker-compose-lab.yml
+
+# 2. Запуск Docker Compose:
+docker-compose -f docker-compose-lab.yml up -d
+
+# 3. Проверка работающих контейнеров:
+docker ps
+
+# 4. Остановка Docker Compose (изза ошибки: ERROR: for jevgeny_web_1  Cannot start service web: 
+driver failed programming external coStarting jevgeny_db_1  ... done
+90115d8250159): Bind for 0.0.0.0:8081 failed: port is already allocated):
+
+docker-compose -f docker-compose-lab.yml down
+
+# 5. Проверка порта 8081 (когда возникла ошибка с занятым портом): 
+sudo netstat -tuln | grep 8081
+
+# 6. Остановка процесса, использующего порт 8081:
+sudo kill -9 3590 
+sudo kill -9 3595
+
+# 7. Был еще один контейнер 
+sudo docker ps 
+
+# 8. Остановка контейнера!
+sudo docker stop 2acc4
+
+# 9. Проверка всех запущенных Docker контейнеров:
+docker ps -a
+
+# 10. Повторный запуск Docker Compose после устранения проблемы с портом:
+docker-compose -f docker-compose-lab.yml up -d
+В итоге, по 2 процесса на каждом узле поднято!
+
