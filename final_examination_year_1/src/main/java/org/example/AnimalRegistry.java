@@ -9,8 +9,6 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 
 public class AnimalRegistry {
@@ -44,24 +42,17 @@ public class AnimalRegistry {
     public void saveToFile() {
         try (FileWriter writer = new FileWriter(FILENAME)) {
             Gson gson = new Gson();
-            HashMap<String, Object> data = new HashMap<>();
-            data.put("lastUpdated", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
-            data.put("totalAnimals", animals.size());
-            data.put("animals", animals);
-            gson.toJson(data, writer);
+            gson.toJson(animals, writer);
         } catch (IOException e) {
             System.out.println("Error saving to file: " + e.getMessage());
         }
     }
 
-   public void loadFromFile() {
+    public void loadFromFile() {
         try (FileReader reader = new FileReader(FILENAME)) {
             Gson gson = new Gson();
-            Type mapType = new TypeToken<HashMap<String, Object>>(){}.getType();
-            HashMap<String, Object> data = gson.fromJson(reader, mapType);
-            
-            Type animalListType = new TypeToken<List<Animal>>(){}.getType();
-            animals = gson.fromJson(gson.toJson(data.get("animals")), animalListType);
+            Type listType = new TypeToken<List<Animal>>(){}.getType();
+            animals = gson.fromJson(reader, listType);
         } catch (IOException e) {
             System.out.println("Error loading from file: " + e.getMessage());
         }
