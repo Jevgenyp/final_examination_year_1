@@ -4,7 +4,7 @@ import java.util.Date;
 
 public abstract class Domestic extends Animal {
     public Domestic(String id, String species, Date birthDate, String name, String type) {
-        super(id, type, species, birthDate, name); // Use the provided "type" parameter
+        super(id, type, species, birthDate, name);
     }
 
     @Override
@@ -14,7 +14,7 @@ public abstract class Domestic extends Animal {
 
     public static class Dog extends Domestic {
         public Dog(String id, String species, Date birthDate, String name) {
-            super(id, species, birthDate, name, "Dog"); // Provide "Dog" as the "type"
+            super(id, species, birthDate, name, "Dog");
         }
 
         @Override
@@ -25,7 +25,7 @@ public abstract class Domestic extends Animal {
 
     public static class Cat extends Domestic {
         public Cat(String id, String species, Date birthDate, String name) {
-            super(id, species, birthDate, name, "Cat"); // Provide "Cat" as the "type"
+            super(id, species, birthDate, name, "Cat");
         }
 
         @Override
@@ -36,7 +36,7 @@ public abstract class Domestic extends Animal {
 
     public static class Hamster extends Domestic {
         public Hamster(String id, String species, Date birthDate, String name) {
-            super(id, species, birthDate, name, "Hamster"); // Provide "Hamster" as the "type"
+            super(id, species, birthDate, name, "Hamster");
         }
 
         @Override

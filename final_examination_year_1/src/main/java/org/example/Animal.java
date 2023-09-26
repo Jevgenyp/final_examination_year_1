@@ -14,7 +14,7 @@ public abstract class Animal {
 
     public Animal(String id, String type, String species, Date birthDate, String name) {
         this.id = id;
-        this.type = type; // Add the "type" field
+        this.type = type; 
         this.species = species;
         this.birthDate = birthDate;
         this.name = name;
