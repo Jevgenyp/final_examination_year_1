@@ -10,6 +10,7 @@ public abstract class Animal {
     protected Date birthDate;
     protected String name;
     protected List<String> commands = new ArrayList<>();
+
     public Animal(String id, String species, Date birthDate, String name) {
         this.id = id;
         this.species = species;
@@ -35,6 +36,8 @@ public abstract class Animal {
 
     public abstract String getType();
 
+    public abstract String getCategory();  // New abstract method
+
     public void teachCommand(String command) {
         commands.add(command);
     }
@@ -46,5 +49,4 @@ public abstract class Animal {
     public String displayInfo() {
         return "ID: " + id + ", Species: " + species + ", Birth Date: " + birthDate.toString() + ", Name: " + name;
     }
-    public abstract String getCategory();
 }
