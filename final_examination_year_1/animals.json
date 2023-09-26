@@ -1,0 +1,34 @@
+{
+  "lastUpdated": "2023-09-26 11:32:28",
+  "totalAnimals": 3,
+  "animals": [
+    {
+      "type": "Cat",
+      "id": "12",
+      "species": "Black",
+      "birthDate": "Mar 12, 2000, 12:00:00 AM",
+      "name": "Alan",
+      "commands": [
+        "sit"
+      ]
+    },
+    {
+      "type": "Hamster",
+      "id": "23",
+      "species": "White",
+      "birthDate": "May 23, 2022, 12:00:00 AM",
+      "name": "Ruud",
+      "commands": [
+        "run"
+      ]
+    },
+    {
+      "type": "Camel",
+      "id": "34",
+      "species": "3 Legs",
+      "birthDate": "Apr 30, 2012, 12:00:00 AM",
+      "name": "Kusko",
+      "commands": []
+    }
+  ]
+}

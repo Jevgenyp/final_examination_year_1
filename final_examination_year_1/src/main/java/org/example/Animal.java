@@ -5,18 +5,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Animal {
+    private final String type;
     protected String id;
     protected String species;
     protected Date birthDate;
     protected String name;
     protected List<String> commands = new ArrayList<>();
 
-    public Animal(String id, String species, Date birthDate, String name) {
+    public Animal(String id, String type, String species, Date birthDate, String name) {
         this.id = id;
+        this.type = type; // Add the "type" field
         this.species = species;
         this.birthDate = birthDate;
         this.name = name;
     }
+
 
     public String getId() {
         return id;
